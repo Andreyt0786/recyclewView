@@ -135,8 +135,8 @@ class StatsView @JvmOverloads constructor(
         number.forEachIndexed { index, datum ->
             val angle = datum * 360F
             paint.color = colors.getOrElse(index) { generateRandomColor() }
-           canvas.drawArc(oval, startAngle + progress, angle * progress, false, paint)
-           startAngle += angle
+            canvas.drawArc(oval, startAngle + progress * 360, angle * progress, false, paint)
+            startAngle += angle
         }
 
         paint.color = colors.getOrElse(0) { generateRandomColor() }
